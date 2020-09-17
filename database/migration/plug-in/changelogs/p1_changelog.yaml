@@ -1,0 +1,38 @@
+databaseChangeLog:
+    - preConditions:
+          - runningAs:
+                username: vorapod
+
+    - changeSet:
+          id: 1.0.0
+          comment: Insert GuestOne in MyGuest
+          author: vorapod earbchokchai
+          context: "development"
+          changes:
+              - sqlFile:
+                    path: plug-in/plug-in-one/1.0.0/migration.sql
+          rollback:
+              - sqlFile:
+                    path: plug-in/plug-in-one/1.0.0/rollback.sql
+    - changeSet:
+          id: 2.0.0
+          comment:  Insert GuestTwo in MyGuest
+          author: vorapod earbchokchai
+          context: "production"
+          changes:
+              - sqlFile:
+                    path: plug-in/plug-in-one/2.0.0/migration.sql
+          rollback:
+              - sqlFile:
+                    path: plug-in/plug-in-one/2.0.0/rollback.sql
+    - changeSet:
+          id: 3.0.0
+          comment: Insert GuestThree in MyGuest
+          author: vorapod earbchokchai
+          context: "development"
+          changes:
+              - sqlFile:
+                    path: plug-in/plug-in-one/3.0.0/migration.sql
+          rollback:
+              - sqlFile:
+                    path: plug-in/plug-in-one/3.0.0/rollback.sql

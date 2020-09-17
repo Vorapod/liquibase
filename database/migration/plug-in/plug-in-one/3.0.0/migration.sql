@@ -1,0 +1,1 @@
+INSERT INTO MyGuests (firstname) VALUES ("GuestThree")

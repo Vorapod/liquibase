@@ -1,0 +1,5 @@
+#!/bin/bash
+
+/wait-for-it.sh $WAITING_FOR_HOST:$WAITING_FOR_PORT -s -t $WAITING_TIME
+
+/base-entrypoint.sh $1

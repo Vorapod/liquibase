@@ -1,0 +1,1 @@
+Delete from MyGuests where firstname = "GuestThree"

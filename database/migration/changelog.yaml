@@ -1,0 +1,12 @@
+databaseChangeLog:
+    - preConditions:
+          - runningAs:
+                username: vorapod
+    - includeAll:
+        path: plug-in/changelogs
+    # - include: 
+    #     file: plug-in/plug-in-one/changelog.yaml
+    # - include: 
+    #     file: plug-in/plug-in-two/changelog.yaml    
+
+    

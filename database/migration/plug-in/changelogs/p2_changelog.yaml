@@ -1,0 +1,38 @@
+databaseChangeLog:
+    - preConditions:
+          - runningAs:
+                username: vorapod
+
+    - changeSet:
+          id: 1.1.0
+          comment: Create table MyGuests2
+          author: vorapod earbchokchai
+          context: "development"
+          changes:
+              - sqlFile:
+                    path: plug-in/plug-in-two/1.1.0/migration.sql
+          rollback:
+              - sqlFile:
+                    path: plug-in/plug-in-two/1.1.0/rollback.sql
+    - changeSet:
+          id: 2.1.0
+          comment: Insert GuestOne in MyGuest2
+          author: vorapod earbchokchai
+          context: "production"
+          changes:
+              - sqlFile:
+                    path: plug-in/plug-in-two/2.1.0/migration.sql
+          rollback:
+              - sqlFile:
+                    path: plug-in/plug-in-two/2.1.0/rollback.sql
+    - changeSet:
+          id: 3.1.0
+          comment: Insert GuestTwo in MyGuest2
+          author: vorapod earbchokchai
+          context: "development"
+          changes:
+              - sqlFile:
+                    path: plug-in/plug-in-two/3.1.0/migration.sql
+          rollback:
+              - sqlFile:
+                    path: plug-in/plug-in-two/3.1.0/rollback.sql

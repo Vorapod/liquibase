@@ -1,0 +1,17 @@
+version: '3.1'
+
+services:
+  company-a-db-migration:
+    image: company-a-db-migration-vipera:1.0.0
+    build:
+      context: database/migration
+    volumes: 
+      - ./database/migration/:/liquibase
+    environment: 
+      LIQUIBASE_URL: jdbc:mysql://host.docker.internal:3306/company_a
+      LIQUIBASE_USERNAME: vorapod
+      LIQUIBASE_PASSWORD: password
+      LIQUIBASE_CHANGELOG: changelog.yaml
+      LIQUIBASE_CONTEXTS: development
+    # command: update
+    # command: ["generateChangeLog", "–diffTypes=data"]
